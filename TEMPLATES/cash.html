@@ -1,0 +1,151 @@
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        min-height: 100vh;
+        width: 100vw;
+        background-color: rgb(54, 111, 177);
+    }
+
+    header {
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+    header i {
+        font-size: 26px;
+        color: whitesmoke;
+        cursor: pointer;
+    }
+
+    .stats {
+        height: 350px;
+        background: whitesmoke;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        box-shadow: rgb(80, 80, 80) 3px 3px 12px;
+        margin-bottom: 60vh;
+    }
+    
+    form {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        flex-direction: column;
+        height: 90%;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    form button{
+        border: none;
+        border-radius: 10px;
+        background-color: red;
+        color: whitesmoke;
+        cursor: pointer;
+    }
+
+    .verwijder {
+        height: 26px;
+        width: 80px;
+        background: rgb(11, 177, 20);
+        font-weight: 700;
+    }
+
+    .terug {
+        color: blue;
+        cursor: pointer;
+        font-size: 15px;
+    }
+
+    input {
+        height: 30px;
+        width: 200px;
+        outline: none;
+    }
+
+    @media (min-width: 1000px) {
+        .stats {
+            width: 800px;
+        }
+        .tickets {
+            width: 800px;
+        }
+    }
+    @media (max-width: 1000px) {
+        .stats {
+            width: 90vw;
+        }
+        .tickets {
+            width: 90vw;
+        }
+    }
+</style>
+<header>
+    <a href="/"><i class="fa-solid fa-house-chimney"></i></a>
+    {% if user.is_superuser %}
+    <a href="/admin"><i class="fa-solid fa-gear"></i></a>
+    {% endif %}
+    <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+</header>
+<section class="stats">
+    <form method="post">
+        {% csrf_token %}
+        <h2>Registreer bezoeker met contant betaling</h2>
+        <input placeholder="Voornaam" name="firstname" type="text" autocomplete="off">
+        <input placeholder="Achternaam" name="lastname" type="text" autocomplete="off">
+        <input placeholder="Email" name="email" type="email" autocomplete="off">
+        <input placeholder="Aantal kaarten" name="ticketcount" type="text" autocomplete="off">
+        <label for="totalamount">Te betalen:</label>
+        <input placeholder="Totaalbedrag" name="totalamount" type="text" autocomplete="off">
+        <div class="buttons">
+            <button type="submit" class="verwijder">Checkin</button>
+            <a href="/checkout" class="terug">terug</a>
+        </div>
+    </form>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const ticketCountInput = document.querySelector('input[name="ticketcount"]');
+        const totalAmountInput = document.querySelector('input[name="totalamount"]');
+        
+        // Make totalamount field readonly so users can't edit it
+        totalAmountInput.readOnly = true;
+        
+        // Set initial value
+        totalAmountInput.value = '0,00';
+        
+        // Function to calculate and update total amount
+        function updateTotalAmount() {
+            const ticketCount = parseFloat(ticketCountInput.value) || 0;
+            const totalAmount = ticketCount * 12.5;
+            
+            // Format with 2 decimals and comma as decimal separator
+            totalAmountInput.value = totalAmount.toFixed(2).replace('.', ',');
+        }
+        
+        // Add event listener for real-time updates
+        ticketCountInput.addEventListener('input', updateTotalAmount);
+        
+        // Also trigger on keyup for better responsiveness
+        ticketCountInput.addEventListener('keyup', updateTotalAmount);
+        
+        // Trigger initial calculation in case there's already a value
+        updateTotalAmount();
+    });
+</script>

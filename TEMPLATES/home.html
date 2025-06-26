@@ -1,0 +1,231 @@
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        min-height: 100vh;
+        width: 100vw;
+        background-color: rgb(54, 111, 177);
+    }
+
+    header {
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+    header i {
+        font-size: 26px;
+        color: whitesmoke;
+        cursor: pointer;
+    }
+
+    .stats {
+        height: 160px;
+        background: whitesmoke;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        box-shadow: rgb(80, 80, 80) 3px 3px 12px;
+    }
+    .stats .box {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        justify-content: space-between;
+        width: 85%;
+    }
+    .stats .box h5 {
+        font-size: 14px;
+    }
+    .stats .box p {
+        font-size: 13px;
+    }
+    .stats .box h5, .stats .box p{
+        padding-bottom: 6px;
+    }
+    .stats div:nth-child(2) p {
+        border-bottom: solid 2px black;
+        min-width: 45px;
+        text-align: right;
+    }
+    .stats div:nth-child(3) p {
+        color: rgb(54, 111, 177);
+        font-weight: 800;
+    }
+
+    .tickets {
+        min-height: 65vh;
+        background: whitesmoke;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        box-shadow: rgb(80, 80, 80) 3px 3px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+    .tickets div, .tickets form {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        width: 85%;
+        text-align: center;
+        align-items: center;
+        justify-items: center;
+    }
+    .tickets .titlebar {
+        font-size: 17px;
+        color: rgb(54, 111, 177);
+        font-weight: 800;
+        margin-top: 28px;
+        margin-bottom: 10px;
+    }
+    .tickets .ticket {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+    .tickets .ticket a {
+        text-decoration: none;
+        color: rgb(187, 2, 2);
+        font-weight: 700;
+    }
+    .on, .off {
+        cursor: pointer;
+        height: 22px;
+        width: 55px;
+        border: none;
+        border-radius: 15px;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .on i, .off i {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+    .on .fa-check {
+        color: whitesmoke;
+        background: green;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+    .on .fa-xmark {
+        color: rgb(65, 65, 65);
+        background: rgb(209, 209, 209);
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+    .off .fa-check {
+        color: rgb(65, 65, 65);
+        background: rgb(209, 209, 209);
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+    .off .fa-xmark {
+        color: whitesmoke;
+        background: red;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    @media (min-width: 1000px) {
+        .stats {
+            width: 800px;
+        }
+        .tickets {
+            width: 800px;
+        }
+    }
+    @media (max-width: 1000px) {
+        .stats {
+            width: 90vw;
+        }
+        .tickets {
+            width: 90vw;
+        }
+    }
+</style>
+<header>
+    <a href="/checkout"><i class="fa-solid fa-cash-register"></i></a>
+    {% if user.is_superuser %}
+    <a href="/admin"><i class="fa-solid fa-gear"></i></a>
+    {% endif %}
+    <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+</header>
+<section class="stats">
+    <div class="box">
+        <h5>Besteld</h5>
+        <p style="text-align: center;">{{ ordered }}</p>
+        <p style="text-align: right;">€ {{ unpayed }}</p>
+    </div>
+    <div class="box">
+        <h5>Betaald</h5>
+        <p style="border: none; text-align: center;">{{ ordered_payed }}</p>
+        <p style="text-align: right; width: 40%; margin-left: 60%;">€ {{ payed }}</p>
+    </div>
+    <div class="box">
+        <h5>Som</h5>
+        <p style="text-align: center;">{{ sum_ticket_count }}</p>
+        <p style="text-align: right;">€ {{ sum_tickets_payed }}</p>
+    </div>
+</section>
+<section class="tickets">
+    <div class="titlebar">
+        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-ticket"></i>
+        <i class="fa-solid fa-coins"></i>
+        <i class="fa-solid fa-receipt"></i>
+        <i class="fa-solid fa-cash-register"></i>
+        <i class="fa-solid fa-trash"></i>
+    </div>
+    {% for ticket in tickets %}
+    <form class="ticket" method="post">
+        {% csrf_token %}
+        <p>{{ ticket.first_name }} {{ ticket.last_name }}</p>
+        <p>{{ ticket.ticket_count }}</p>
+        <p>€ {{ ticket.total_amount }}</p>
+        <p>{{ ticket.invoice_nr }}</p>
+        {% if ticket.has_payed == '1' %}
+        <button class="on" type="submit" name="{{ ticket.invoice_nr }}">
+            <i class="fa-solid fa-check"></i>
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        {% else %}
+        <button class="off" type="submit" name="{{ ticket.invoice_nr }}">
+            <i class="fa-solid fa-check"></i>
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        {% endif %}
+        <a href="/delete/{{ ticket.invoice_nr }}">Delete</a>
+    </form>
+    {% endfor %}
+</section>

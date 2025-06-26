@@ -1,0 +1,68 @@
+26-06-2025 16:27:43: Something went wrong when trying to register a cash payment:
+26-06-2025 16:27:43: ['“26-06-2025” value has an invalid date format. It must be in YYYY-MM-DD format.']
+26-06-2025 16:27:43: User "adm-sdevries" has accessed "/checkout" from remote address: "127.0.0.1"
+26-06-2025 16:27:47: User "adm-sdevries" has accessed "/" from remote address: "127.0.0.1"
+26-06-2025 16:27:49: User "adm-sdevries" has accessed "/checkout" from remote address: "127.0.0.1"
+26-06-2025 16:28:00: User "adm-sdevries" has accessed "/log/broker_log.txt" from remote address: "127.0.0.1"
+26-06-2025 16:28:00: User "adm-sdevries" has accessed "/log/site_log.txt" from remote address: "127.0.0.1"
+26-06-2025 16:28:31: User "adm-sdevries" has accessed "/log/site_log.txt" from remote address: "127.0.0.1"
+26-06-2025 16:28:33: User "adm-sdevries" has accessed "/" from remote address: "127.0.0.1"
+26-06-2025 16:28:34: User "adm-sdevries" has accessed "/checkout" from remote address: "127.0.0.1"
+26-06-2025 16:28:47: User adm-sdevries registered a cash payment:
+26-06-2025 16:28:47: User "adm-sdevries" has accessed "/checkout" from remote address: "127.0.0.1"
+26-06-2025 16:28:52: User "adm-sdevries" has accessed "/checkout" from remote address: "127.0.0.1"
+26-06-2025 16:28:54: User "adm-sdevries" has accessed "/" from remote address: "127.0.0.1"
+26-06-2025 16:29:19: User "adm-sdevries" has accessed "/delete/cash-payment 26-06-2025 16:28" from remote address: "127.0.0.1"
+26-06-2025 16:29:21: User "adm-sdevries" has deleted entry "cash-payment 26-06-2025 16:28"
+26-06-2025 16:29:21: Remote address: "127.0.0.1"
+26-06-2025 16:29:21: Could not remove attachment and invoice file of ticket with invoice nr "cash-payment 26-06-2025 16:28":
+26-06-2025 16:29:21: [Errno 2] No such file or directory: '/Users/sebastiaandv/Library/CloudStorage/OneDrive-Huizedevries/04 Zakelijk/Lief en lied/Ticketmaster/PDF/cash-payment 26-06-2025 16:28.pdf'
+26-06-2025 16:29:21: Could not remove invoice nr cash-payment 26-06-2025 16:28 from BROKER database:
+26-06-2025 16:29:21: list.remove(x): x not in list
+26-06-2025 16:29:21: User "adm-sdevries" has accessed "/" from remote address: "127.0.0.1"
+26-06-2025 16:29:23: User "adm-sdevries" has accessed "/checkout" from remote address: "127.0.0.1"
+26-06-2025 16:29:23: User "adm-sdevries" has accessed "/" from remote address: "127.0.0.1"
+26-06-2025 16:31:08: User "adm-sdevries" has accessed "/" from remote address: "127.0.0.1"
+26-06-2025 16:31:17: User "adm-sdevries" has accessed "/checkout" from remote address: "127.0.0.1"
+26-06-2025 16:31:40: User adm-sdevries registered a cash payment:
+26-06-2025 16:31:40: User "adm-sdevries" has accessed "/checkout" from remote address: "127.0.0.1"
+26-06-2025 16:31:43: User "adm-sdevries" has accessed "/" from remote address: "127.0.0.1"
+26-06-2025 16:33:56: User "adm-sdevries" has accessed "/" from remote address: "127.0.0.1"
+26-06-2025 16:35:20: User "adm-sdevries" has accessed "/" from remote address: "127.0.0.1"
+26-06-2025 16:36:01: User "adm-sdevries" has accessed "/delete/2025-0001" from remote address: "127.0.0.1"
+26-06-2025 16:36:02: User "adm-sdevries" has deleted entry "2025-0001"
+26-06-2025 16:36:02: Remote address: "127.0.0.1"
+26-06-2025 16:36:02: User "adm-sdevries" has accessed "/" from remote address: "127.0.0.1"
+26-06-2025 16:36:03: User "adm-sdevries" has accessed "/delete/cash-payment 26-06-2025 16:31" from remote address: "127.0.0.1"
+26-06-2025 16:36:04: User "adm-sdevries" has deleted entry "cash-payment 26-06-2025 16:31"
+26-06-2025 16:36:04: Remote address: "127.0.0.1"
+26-06-2025 16:36:04: Could not remove attachment and invoice file of ticket with invoice nr "cash-payment 26-06-2025 16:31":
+26-06-2025 16:36:04: [Errno 2] No such file or directory: '/Users/sebastiaandv/Library/CloudStorage/OneDrive-Huizedevries/04 Zakelijk/Lief en lied/Ticketmaster/PDF/cash-payment 26-06-2025 16:31.pdf'
+26-06-2025 16:36:04: Could not remove invoice nr cash-payment 26-06-2025 16:31 from BROKER database:
+26-06-2025 16:36:04: list.remove(x): x not in list
+26-06-2025 16:36:04: User "adm-sdevries" has accessed "/" from remote address: "127.0.0.1"
+26-06-2025 17:28:49: User "adm-sdevries" has accessed "/checkout" from remote address: "127.0.0.1"
+26-06-2025 17:39:07: User "adm-sdevries" has accessed "/checkout" from remote address: "127.0.0.1"
+26-06-2025 17:39:17: User "adm-sdevries" has accessed "/" from remote address: "127.0.0.1"
+26-06-2025 17:39:57: User "adm-sdevries" has accessed "/" from remote address: "127.0.0.1"
+26-06-2025 17:41:09: User "adm-sdevries" has accessed "/checkout" from remote address: "127.0.0.1"
+26-06-2025 17:41:29: User "adm-sdevries" has accessed "/checkout" from remote address: "127.0.0.1"
+26-06-2025 17:41:31: User "adm-sdevries" has accessed "/" from remote address: "127.0.0.1"
+26-06-2025 17:41:32: User "adm-sdevries" has accepted payment for "2025-0005"
+26-06-2025 17:41:32: Remote address: "127.0.0.1"
+26-06-2025 17:41:32: User "adm-sdevries" has accessed "/" from remote address: "127.0.0.1"
+26-06-2025 17:41:33: User "adm-sdevries" has accessed "/checkout" from remote address: "127.0.0.1"
+26-06-2025 17:41:40: User "adm-sdevries" has registered "Sebastiaan de Vries"
+26-06-2025 17:41:40: Remote address: "127.0.0.1"
+26-06-2025 17:41:40: User "adm-sdevries" has accessed "/checkout" from remote address: "127.0.0.1"
+26-06-2025 17:41:50: User "adm-sdevries" has accessed "/checkout" from remote address: "127.0.0.1"
+26-06-2025 17:41:54: User "adm-sdevries" has accessed "/" from remote address: "127.0.0.1"
+26-06-2025 17:41:55: User "adm-sdevries" has accessed "/delete/2025-0005" from remote address: "127.0.0.1"
+26-06-2025 17:41:57: User "adm-sdevries" has deleted entry "2025-0005"
+26-06-2025 17:41:57: Remote address: "127.0.0.1"
+26-06-2025 17:41:57: Could not remove attachment and invoice file of ticket with invoice nr "2025-0005":
+26-06-2025 17:41:57: [Errno 2] No such file or directory: '/Users/sebastiaandv/Library/CloudStorage/OneDrive-Huizedevries/04 Zakelijk/Lief en lied/Ticketmaster/PDF/2025-0005.pdf'
+26-06-2025 17:41:57: Could not remove invoice nr 2025-0005 from BROKER database:
+26-06-2025 17:41:57: list.remove(x): x not in list
+26-06-2025 17:41:57: User "adm-sdevries" has accessed "/" from remote address: "127.0.0.1"
+26-06-2025 17:47:09: User "adm-sdevries" has accessed "/" from remote address: "127.0.0.1"

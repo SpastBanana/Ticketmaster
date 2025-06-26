@@ -1,0 +1,58 @@
+<style>
+    form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        width: 100vw;
+        gap: 10px;
+    }
+
+    input {
+        width: 200px;
+        height: 24px;
+        border: solid 1px gray;
+        outline: none;
+        border-radius: 3px;
+        padding: 5px;
+    }
+
+    button {
+        font-size: 19px;
+        width: 206px;
+        height: 33px;
+        border: solid gray 0px;
+        background: rgb(54, 111, 177);
+        color: whitesmoke;
+        border-radius: 3px;
+        cursor: pointer;
+        padding: 2px;
+        font-weight: 100;
+    }
+
+    h2 {
+        text-align: center;
+        color: rgb(14, 72, 139);
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+</style>
+
+<form method="post">
+    {% csrf_token %}
+    <h2>Lief & Lied<br>Ticketmaster</h2>
+    <input type="text" name="username" placeholder="Username" autocomplete="off">
+    <input id="passinput" type="password" name="password" placeholder="Password" autocomplete="off">
+    <button id="subbtn" type="submit">Login</button>
+</form>
+
+<script>
+    var input = document.getElementById("passinput");
+    input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("subbtn").click();
+        }
+    });
+</script>

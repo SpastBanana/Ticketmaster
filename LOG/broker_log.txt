@@ -1,0 +1,35 @@
+26-06-2025 18:30:03: Connected to mail automations@liefenlied.nl
+26-06-2025 18:30:03: Found 0 emails in the Inbox
+26-06-2025 18:30:03: No emails found in the Inbox
+26-06-2025 18:30:03: Email connection closed
+26-06-2025 18:31:03: Connected to mail automations@liefenlied.nl
+26-06-2025 18:31:03: Found 1 emails in the Inbox
+26-06-2025 18:31:03: Processing email: Bestelde tickets | Sebastiaan de Vries
+26-06-2025 18:31:03: Found CSV attachment: ninja-forms-submission.csv
+26-06-2025 18:31:03: Saved CSV file: /Users/sebastiaandv/Library/CloudStorage/OneDrive-Huizedevries/04 Zakelijk/Lief en lied/Ticketmaster/Attachments/2025-0001.csv
+26-06-2025 18:31:03: Saved /Users/sebastiaandv/Library/CloudStorage/OneDrive-Huizedevries/04 Zakelijk/Lief en lied/Ticketmaster/PDF/2025-0001.pdf
+26-06-2025 18:31:05: Processing complete. Saved 1 CSV file(s) to '/Users/sebastiaandv/Library/CloudStorage/OneDrive-Huizedevries/04 Zakelijk/Lief en lied/Ticketmaster/Attachments' folder
+26-06-2025 18:31:05: Moving emails to appropriate folders...
+26-06-2025 18:31:05: Moved email 'Bestelde tickets | Sebastiaan de Vries' to Inbox.Send (successfully processed)
+26-06-2025 18:31:05: Completed moving emails to appropriate folders
+26-06-2025 18:31:05: Email connection closed
+26-06-2025 18:32:05: Connected to mail automations@liefenlied.nl
+26-06-2025 18:32:05: Found 0 emails in the Inbox
+26-06-2025 18:32:05: No emails found in the Inbox
+26-06-2025 18:32:05: Email connection closed
+26-06-2025 18:33:05: Connected to mail automations@liefenlied.nl
+26-06-2025 18:33:05: Found 0 emails in the Inbox
+26-06-2025 18:33:05: No emails found in the Inbox
+26-06-2025 18:33:05: Email connection closed
+26-06-2025 18:34:05: Connected to mail automations@liefenlied.nl
+26-06-2025 18:34:05: Found 0 emails in the Inbox
+26-06-2025 18:34:05: No emails found in the Inbox
+26-06-2025 18:34:05: Email connection closed
+26-06-2025 18:35:06: Connected to mail automations@liefenlied.nl
+26-06-2025 18:35:06: Found 0 emails in the Inbox
+26-06-2025 18:35:06: No emails found in the Inbox
+26-06-2025 18:35:06: Email connection closed
+26-06-2025 18:36:10: Connected to mail automations@liefenlied.nl
+26-06-2025 18:36:10: Found 0 emails in the Inbox
+26-06-2025 18:36:10: No emails found in the Inbox
+26-06-2025 18:36:10: Email connection closed

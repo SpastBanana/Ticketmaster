@@ -1,0 +1,129 @@
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        min-height: 100vh;
+        width: 100vw;
+        background-color: rgb(54, 111, 177);
+    }
+
+    header {
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+    header i {
+        font-size: 26px;
+        color: whitesmoke;
+        cursor: pointer;
+    }
+
+    .stats {
+        height: 160px;
+        background: whitesmoke;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        box-shadow: rgb(80, 80, 80) 3px 3px 12px;
+    }
+    .stats a {
+        height: 35px;
+        width: 180px;
+        background-color: rgb(54, 111, 177);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: whitesmoke;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .tickets {
+        min-height: 65vh;
+        background: whitesmoke;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        box-shadow: rgb(80, 80, 80) 3px 3px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+    .tickets div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        width: 85%;
+        text-align: center;
+        align-items: center;
+        justify-items: center;
+    }
+    .tickets .titlebar {
+        font-size: 17px;
+        color: rgb(54, 111, 177);
+        font-weight: 800;
+        margin-top: 28px;
+        margin-bottom: 10px;
+    }
+    .tickets .ticket {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    @media (min-width: 1000px) {
+        .stats {
+            width: 800px;
+        }
+        .tickets {
+            width: 800px;
+        }
+    }
+    @media (max-width: 1000px) {
+        .stats {
+            width: 90vw;
+        }
+        .tickets {
+            width: 90vw;
+        }
+    }
+</style>
+<header>
+    <a href="/"><i class="fa-solid fa-house-chimney"></i></a>
+    {% if user.is_superuser %}
+    <a href="/admin"><i class="fa-solid fa-gear"></i></a>
+    {% endif %}
+    <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+</header>
+<section class="stats">
+    <a href="/checkout/invoice">Digitaal betaald</a>
+    <a href="/checkout/cash">Contant betaald</a>
+</section>
+<section class="tickets">
+    <div class="titlebar">
+        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-envelope"></i>
+        <i class="fa-solid fa-receipt"></i>
+        <i class="fa-solid fa-ticket"></i>
+    </div>
+    {% for ticket in tickets %}
+    {% if ticket.has_payed == '1' %}
+    <div class="ticket" method="post">
+        <p>{{ ticket.first_name }} {{ ticket.last_name }}</p>
+        <p>{{ ticket.email }}</p>
+        <p>€ {{ ticket.total_amount }}</p>
+        {% if ticket.checked_in == '1' %}
+        <i style="font-size: 20px; color: green;" class="fa-solid fa-circle-check"></i>
+        {% else %}
+        <i style="font-size: 20px; color: red;" class="fa-solid fa-circle-xmark"></i>
+        {% endif %}
+    </div>
+    {% endif %}
+    {% endfor %}
+</section>
