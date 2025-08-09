@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure--0&sg*r0u1*syy)^&qaxd+6+e^1ind()65aox4waj6hl=94@uz
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+CSRF_TRUSTED_ORIGINS = ["https://ticketmaster.huizedevries.nl"]
 
 # Application definition
 

@@ -55,9 +55,11 @@ def mail_scanner():
             try:
                 status, messages = mail.select(folder_name)
                 if status == 'OK':
-                    write_log(f'Connected to mail {AUTOMATIONS_ACCOUNT}')
+                    #write_log(f'Connected to mail {AUTOMATIONS_ACCOUNT}')
                     folder_selected = True
                     break
+                else:
+                    write_log(f'Could not connect to mail {AUTOMATIONS_ACCOUNT}')
             except:
                 continue
         
@@ -75,7 +77,8 @@ def mail_scanner():
             return
         
         email_ids = messages[0].split()
-        write_log(f"Found {len(email_ids)} emails in the Inbox")
+        if len(email_ids) != 0:
+            write_log(f"Found {len(email_ids)} emails in the Inbox")
         
         if not email_ids:
             write_log("No emails found in the Inbox")
@@ -200,7 +203,7 @@ def mail_scanner():
 
 Wij zijn ontzettend blij dat u naar ons concert wilt komen! Bij deze sturen wij u de factuur om de betaling van uw kaarten te kunnen voldoen.
 
-LET OP: Het email adres waarop u deze mail ontvang is tevens uw toegang tot het concert.
+LET OP: Het email adres waarop u deze mail ontvangt is tevens uw toegang tot het concert.
 
 Wij zien u graag op het concert!
 
@@ -283,7 +286,7 @@ Stichting Lief & Lied
         try:
             mail.close()
             mail.logout()
-            write_log("Email connection closed")
+            #write_log("Email connection closed")
         except:
             write_log('Could not close Email connection')
             pass
